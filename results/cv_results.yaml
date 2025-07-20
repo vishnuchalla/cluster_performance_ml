@@ -1,0 +1,88 @@
+LightGBM:
+  neg_mean_absolute_error_mean: !!python/object/apply:numpy._core.multiarray.scalar
+  - &id001 !!python/object/apply:numpy.dtype
+    args:
+    - f8
+    - false
+    - true
+    state: !!python/tuple
+    - 3
+    - <
+    - null
+    - null
+    - null
+    - -1
+    - -1
+    - 0
+  - !!binary |
+    6E/lpYg15L8=
+  neg_mean_absolute_error_std: !!python/object/apply:numpy._core.multiarray.scalar
+  - *id001
+  - !!binary |
+    Hye3hFdNtj8=
+  neg_mean_squared_error_mean: !!python/object/apply:numpy._core.multiarray.scalar
+  - *id001
+  - !!binary |
+    uIDL8kaz8r8=
+  neg_mean_squared_error_std: !!python/object/apply:numpy._core.multiarray.scalar
+  - *id001
+  - !!binary |
+    aodCDTQs3T8=
+  r2_mean: !!python/object/apply:numpy._core.multiarray.scalar
+  - *id001
+  - !!binary |
+    gAJxtuu9f8s=
+  r2_std: !!python/object/apply:numpy._core.multiarray.scalar
+  - *id001
+  - !!binary |
+    ggJxtuu9j0s=
+RandomForest:
+  neg_mean_absolute_error_mean: !!python/object/apply:numpy._core.multiarray.scalar
+  - *id001
+  - !!binary |
+    ZlFugKRm4b8=
+  neg_mean_absolute_error_std: !!python/object/apply:numpy._core.multiarray.scalar
+  - *id001
+  - !!binary |
+    LiGiDmBHxT8=
+  neg_mean_squared_error_mean: !!python/object/apply:numpy._core.multiarray.scalar
+  - *id001
+  - !!binary |
+    5ik7Pl5o878=
+  neg_mean_squared_error_std: !!python/object/apply:numpy._core.multiarray.scalar
+  - *id001
+  - !!binary |
+    jqeehhMI4D8=
+  r2_mean: !!python/object/apply:numpy._core.multiarray.scalar
+  - *id001
+  - !!binary |
+    64R20UV9G8w=
+  r2_std: !!python/object/apply:numpy._core.multiarray.scalar
+  - *id001
+  - !!binary |
+    B+/gLHBGKkw=
+XGBoost:
+  neg_mean_absolute_error_mean: !!python/object/apply:numpy._core.multiarray.scalar
+  - *id001
+  - !!binary |
+    mpmZ2QWZ478=
+  neg_mean_absolute_error_std: !!python/object/apply:numpy._core.multiarray.scalar
+  - *id001
+  - !!binary |
+    DJjwHNXvzD8=
+  neg_mean_squared_error_mean: !!python/object/apply:numpy._core.multiarray.scalar
+  - *id001
+  - !!binary |
+    ZmZm5ujE/L8=
+  neg_mean_squared_error_std: !!python/object/apply:numpy._core.multiarray.scalar
+  - *id001
+  - !!binary |
+    M2iGA3Zx6z8=
+  r2_mean: !!python/object/apply:numpy._core.multiarray.scalar
+  - *id001
+  - !!binary |
+    AAAAAAAA8P8=
+  r2_std: !!python/object/apply:numpy._core.multiarray.scalar
+  - *id001
+  - !!binary |
+    AAAAAAAA+P8=

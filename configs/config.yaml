@@ -1,0 +1,196 @@
+# Cluster Performance ML Configuration
+
+# Data paths
+data:
+  raw_data_path: "data/raw/cluster_data.csv"
+  processed_data_path: "data/processed/"
+  
+# Model settings
+model:
+  test_size: 0.2
+  random_state: 42
+  cross_validation_folds: 5
+  
+# Feature engineering
+features:
+  # Metadata features (inputs) - these will be auto-detected
+  metadata_patterns:
+    - clusterType
+    - controlPlaneArch
+    - elapsedTime
+    - infraNodesCount
+    - infraNodesType
+    - ipsecMode
+    - k8sVersion
+    - masterNodesCount
+    - masterNodesType
+    - ocpMajorVersion
+    - ocpVersion
+    - passed
+    - platform
+    - publish
+    - region
+    - sdnType
+    - totalNodes
+    - workerArch
+    - workerNodesCount
+    - workerNodesType
+    - jobConfig.burst
+    - jobConfig.jobIterations
+    - jobConfig.qps
+    - jobConfig.waitForDeletion
+    - jobConfig.waitWhenFinished
+    - jobConfig.verifyObjects
+    - jobConfig.churnCycles
+    - jobConfig.churnDelay
+    - jobConfig.churnDeletionStrategy
+    - jobConfig.churnDuration
+    - jobConfig.churnPercent
+    - jobConfig.iterationsPerNamespace
+    - jobConfig.jobType
+    - jobConfig.preLoadPeriod
+
+  # Target metrics (outputs) - these will be auto-detected
+  metric_patterns:
+    - alert
+    - avg-ro-apicalls-latency
+    - max-ro-apicalls-latency
+    - avg-mutating-apicalls-latency
+    - max-mutating-apicalls-latency
+    - cpu-kubelet
+    - max-cpu-kubelet
+    - memory-kubelet
+    - max-memory-kubelet
+    - max-memory-sum-kubelet
+    - cpu-crio
+    - max-cpu-crio
+    - memory-crio
+    - max-memory-crio
+    - max-memory-sum-crio
+    - 99thEtcdDiskBackendCommit
+    - max-99thEtcdDiskBackendCommit
+    - 99thEtcdDiskWalFsync
+    - max-99thEtcdDiskWalFsync
+    - 99thEtcdRoundTripTime
+    - max-99thEtcdRoundTripTime
+    - max-99thEtcdCompaction
+    - 99thEtcdCompaction-raw
+    - max-99thEtcdDefrag
+    - 99thEtcdDefrag-raw
+    - cpu-kube-controller-manager
+    - max-cpu-kube-controller-manager
+    - memory-kube-controller-manager
+    - max-memory-kube-controller-manager
+    - max-memory-sum-kube-controller-manager
+    - cpu-kube-apiserver
+    - max-cpu-kube-apiserver
+    - memory-kube-apiserver
+    - max-memory-kube-apiserver
+    - max-memory-sum-kube-apiserver
+    - cpu-openshift-apiserver
+    - max-cpu-openshift-apiserver
+    - memory-openshift-apiserver
+    - max-memory-openshift-apiserver
+    - max-memory-sum-openshift-apiserver
+    - cpu-etcd
+    - max-cpu-etcd
+    - memory-etcd
+    - max-memory-etcd
+    - max-memory-sum-etcd
+    - cpu-openshift-controller-manager
+    - max-cpu-openshift-controller-manager
+    - memory-openshift-controller-manager
+    - max-memory-openshift-controller-manager
+    - cpu-multus
+    - max-cpu-multus
+    - memory-multus
+    - max-memory-multus
+    - cpu-ovn-control-plane
+    - max-cpu-ovn-control-plane
+    - memory-ovn-control-plane
+    - max-memory-ovn-control-plane
+    - cpu-ovnkube-node
+    - max-cpu-ovnkube-node
+    - memory-ovnkube-node
+    - max-memory-ovnkube-node
+    - cpu-masters
+    - max-cpu-masters
+    - memory-masters
+    - max-memory-masters
+    - max-memory-sum-masters
+    - cpu-workers
+    - max-cpu-workers
+    - memory-workers
+    - max-memory-workers
+    - max-memory-sum-workers
+    - memory-sum-workers
+    - cpu-infra
+    - max-cpu-infra
+    - memory-infra
+    - max-memory-infra
+    - max-memory-sum-infra
+    - cpu-prometheus
+    - max-cpu-prometheus
+    - memory-prometheus
+    - max-memory-prometheus
+    - cpu-router
+    - max-cpu-router
+    - memory-router
+    - max-memory-router
+    - memory-cluster-usage-ratio
+    - max-memory-cluster-usage-ratio
+    - cpu-cluster-usage-ratio
+    - max-cpu-cluster-usage-ratio
+    - nodeCPUSeconds-Workers
+    - nodeCPUSeconds-Masters
+    - nodeCPUSeconds-Infra
+    - cgroupCPUSeconds-Workers
+    - cgroupMemoryRSS-Workers
+    - cgroupCPUSeconds-Masters
+    - cgroupMemoryRSS-Masters
+    - cgroupCPUSeconds-Infra
+    - cgroupMemoryRSS-Infra
+    - cgroupCPUSeconds-namespaces
+    - cgroupMemoryRSS-namespaces
+
+# Models to train
+models:
+  - name: "RandomForest"
+    type: "RandomForestRegressor"
+    params:
+      n_estimators: 100
+      max_depth: 10
+      random_state: 42
+      n_jobs: -1
+      
+  - name: "XGBoost"
+    type: "XGBRegressor"
+    params:
+      n_estimators: 100
+      max_depth: 6
+      learning_rate: 0.1
+      random_state: 42
+      n_jobs: -1
+      
+  - name: "LightGBM"
+    type: "LGBMRegressor"
+    params:
+      n_estimators: 100
+      max_depth: 6
+      learning_rate: 0.1
+      random_state: 42
+      n_jobs: -1
+
+# Evaluation metrics
+evaluation:
+  metrics:
+    - mean_squared_error
+    - mean_absolute_error
+    - r2_score
+    - explained_variance_score
+
+# Output settings
+output:
+  model_save_path: "models/"
+  results_save_path: "results/"
+  plots_save_path: "results/plots/"
