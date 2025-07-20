@@ -36,7 +36,7 @@ cluster_performance_ml/
 │   └── plots/                    # Generated plots
 ├── notebooks/                    # Jupyter notebooks
 │   └── exploratory_analysis.ipynb # EDA notebook
-└── tests/                        # Test files
+
 ```
 
 ## Installation
@@ -49,6 +49,8 @@ cd cluster_performance_ml
 
 2. Install dependencies:
 ```bash
+python -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
 ```
 
@@ -78,7 +80,7 @@ This will:
 
 Use trained models to predict on new data:
 ```bash
-python src/predict.py --input path/to/new_data.csv --output predictions.csv
+python src/predict.py --input path/to/new_data.csv --output predictions.csv --model XGBoost
 ```
 
 ### 4. Exploratory Data Analysis
@@ -87,6 +89,12 @@ Run the Jupyter notebook for data exploration:
 ```bash
 jupyter notebook notebooks/exploratory_analysis.ipynb
 ```
+
+#### Example Execution On Google Colab 
+* EDA: https://colab.research.google.com/drive/1I_AqN-m2p0T2sP8gpHtornPpQWCl8Zlk#scrollTo=msdNxbzFslaG 
+* Training: https://colab.research.google.com/drive/1trek6cCQhJF-yZ-sSBLIGW86QzeY3ugR#scrollTo=bNTJCy_J9fd3
+###### Note: Requires Red Hat, Inc email to access above notebooks
+
 
 ## Configuration
 
@@ -197,8 +205,8 @@ Check `training.log` for detailed execution logs and error messages.
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the Apache 2.0 License.
 
 ## Support
 
-For questions or issues, please create an issue in the repository or contact the development team.
+For questions or issues, please create an issue in the repository.

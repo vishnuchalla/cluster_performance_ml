@@ -67,23 +67,7 @@ model_scores:
     overall_mae: 0.4318086959530726
     overall_mse: 0.4219805417970507
     overall_r2: -2.8378027400183394e+30
-    overall_rmse: !!python/object/apply:numpy._core.multiarray.scalar
-    - &id001 !!python/object/apply:numpy.dtype
-      args:
-      - f8
-      - false
-      - true
-      state: !!python/tuple
-      - 3
-      - <
-      - null
-      - null
-      - null
-      - -1
-      - -1
-      - 0
-    - !!binary |
-      abU0jobJ5D8=
+    overall_rmse: 0.6496002938708162
   RandomForest:
     avg_mutating_apicalls_latency_byLabelVerb_DELETE_byLabelResource_serviceaccounts_mae: 0.11840475580414513
     avg_mutating_apicalls_latency_byLabelVerb_DELETE_byLabelResource_serviceaccounts_mse: 0.03978353270867596
@@ -119,10 +103,7 @@ model_scores:
     overall_mae: 0.27443080863925473
     overall_mse: 0.3442139588499833
     overall_r2: -4.070158587123993e+55
-    overall_rmse: !!python/object/apply:numpy._core.multiarray.scalar
-    - *id001
-    - !!binary |
-      mij31jnG4j8=
+    overall_rmse: 0.586697501997395
   XGBoost:
     avg_mutating_apicalls_latency_byLabelVerb_DELETE_byLabelResource_serviceaccounts_mae: 0.14873414261933565
     avg_mutating_apicalls_latency_byLabelVerb_DELETE_byLabelResource_serviceaccounts_mse: 0.0721236752544887
@@ -158,10 +139,7 @@ model_scores:
     overall_mae: 0.29670241475105286
     overall_mse: 0.434123158454895
     overall_r2: -398547517440.0
-    overall_rmse: !!python/object/apply:numpy._core.multiarray.scalar
-    - *id001
-    - !!binary |
-      dcNf/osV5T8=
+    overall_rmse: 0.6588802307361293
 target_columns:
 - 99thEtcdCompaction-raw_byLabelNamespace_openshift-etcd_byLabelEndpoint_etcd-metrics
 - 99thEtcdDefrag-raw_byLabelNamespace_openshift-etcd_byLabelEndpoint_etcd-metrics
